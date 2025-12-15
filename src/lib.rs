@@ -1,3 +1,7 @@
+pub mod core;
+pub mod fs;
+pub mod models;
+
 use std::path::Path;
 
 pub fn root_display_name(root_path: &Path, is_current_dir: bool) -> String {
@@ -10,4 +14,3 @@ pub fn root_display_name(root_path: &Path, is_current_dir: bool) -> String {
         .map(|name| name.to_string_lossy().into_owned())
         .unwrap_or_else(|| root_path.as_os_str().to_string_lossy().into_owned())
 }
-
