@@ -29,7 +29,21 @@ async fn main() -> ExitCode {
     }
 
     let fs = rtree::fs::RealFileSystem;
-    let tree = rtree::core::walk::walk_dir(&fs, &root_path).await;
+    let options = rtree::core::walk::WalkOptions {
+        max_depth: args.level,
+        ignore_pattern: args.ignore_pattern,
+        // show_hidden is true by default; -a flag is a no-op (keeps it true)
+        show_hidden: true,
+        dirs_only: args.dirs_only,
+        dirs_first: args.dirs_first,
+    };
+    let tree = match rtree::core::walk::walk_dir(&fs, &root_path, &options).await {
+        Ok(tree) => tree,
+        Err(err) => {
+            eprintln!("rtree: {err}");
+            return ExitCode::from(1);
+        }
+    };
 
     let mut stdout = std::io::stdout().lock();
     if let Err(err) = (|| -> std::io::Result<()> {
