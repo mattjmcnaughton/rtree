@@ -15,27 +15,6 @@ cd rtree
 cargo build
 ```
 
-## Project Structure
-
-```
-src/
-|-- main.rs          # Entry point, CLI argument handling, output orchestration
-|-- cli.rs           # Clap CLI argument definitions
-|-- lib.rs           # Library root, exports public modules
-|-- core/
-|   |-- mod.rs       # Core module exports
-|   |-- walk.rs      # Async directory traversal logic
-|   `-- render.rs    # ASCII tree scaffold rendering
-|-- fs/
-|   |-- mod.rs       # FileSystem trait definition
-|   |-- real.rs      # Real filesystem implementation (tokio-based)
-|   `-- mock.rs      # Mock filesystem for testing
-`-- models/
-    |-- mod.rs       # Model exports
-    |-- entry.rs     # FsEntry and EntryKind types
-    `-- tree.rs      # TreeNode and DirTree types
-```
-
 ## Architecture
 
 ### Key Design Decisions
@@ -115,13 +94,3 @@ cargo clippy
 6. Run clippy: `cargo clippy`
 7. Commit your changes
 8. Open a pull request
-
-### Adding New Features
-
-The project follows a specification-driven approach. See `spec.md` for the current v0 specification. Features marked as "non-goals" in the spec are intentionally deferred for future versions.
-
-### Writing Tests
-
-- Unit tests live alongside the code they test (in `#[cfg(test)]` modules)
-- Use `MockFileSystem` for testing filesystem-dependent code
-- Tests should be deterministic and not depend on real filesystem state

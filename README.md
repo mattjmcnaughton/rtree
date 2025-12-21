@@ -12,25 +12,7 @@ A fast, deterministic directory tree visualization tool written in Rust. A clone
 
 ## Installation
 
-### Prerequisites
-
-- Rust 1.85+ (2024 edition)
-
-### Building from source
-
-```sh
-git clone https://github.com/mattjmcnaughton/rtree.git
-cd rtree
-cargo build --release
-```
-
-The binary will be available at `./target/release/rtree`.
-
-### Install to PATH
-
-```sh
-cargo install --path .
-```
+WIP (eventually will be homebrew)
 
 ## Usage
 
