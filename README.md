@@ -21,6 +21,8 @@ brew tap mattjmcnaughton/tap
 brew install mattjmcnaughton/tap/rtree
 ```
 
+This also creates a `tree` symlink, so you can use either `rtree` or `tree`.
+
 ### Build from Source
 
 ```sh
