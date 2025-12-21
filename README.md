@@ -81,4 +81,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, project structure,
 
 ## License
 
-MIT
+GPL v2
