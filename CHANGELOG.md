@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mattjmcnaughton/rtree/compare/v1.0.0...v1.1.0) (2025-12-21)
+
+
+### Features
+
+* **cli:** add filtering and sorting options ([8c5114f](https://github.com/mattjmcnaughton/rtree/commit/8c5114f70374be1c39344145648ac422c4bfba97))
+
 # 1.0.0 (2025-12-21)
 
 
